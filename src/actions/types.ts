@@ -1,0 +1,1 @@
+export const FETCH_LEAGUES = 'FETCH_LEAGUES';
