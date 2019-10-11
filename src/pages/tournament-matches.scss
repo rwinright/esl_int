@@ -1,3 +1,35 @@
 .Tournament_Matches{
-  background-color: orange;
+  height: 40em;
+  width: 35em;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  .league-header{
+    border-top: 6px solid $green;
+    border-radius: 2px 2px 0px 0px;
+    margin-bottom: 16px;
+    background-color: $white;
+    flex: 1;
+  }
+  .match-container{
+    border-radius: 2px;
+    background-color: $white;
+    flex: 6;
+    .league-results{
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      border-bottom: 1px solid $border-gray;
+      padding: 16px;
+      .time-container{
+
+      }
+      .team-result{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 6px 0;
+      }
+    }
+  }
 }
