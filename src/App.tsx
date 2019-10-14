@@ -1,13 +1,20 @@
 import React from 'react';
 import './App.scss';
+
+//Redux crap
+import {Provider} from 'react-redux';
+import store from './store/store';
+
 import TournamentMatches from './pages/TournamentMatches';
 
 const App: React.FC = () => {
 
   return (
-    <div className="App">
-      <TournamentMatches />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <TournamentMatches />
+      </div>
+    </Provider>
   );
 }
 

@@ -1,10 +1,11 @@
-import { FETCH_LEAGUES } from './types';
+import { FETCH_LEAGUES } from '../actions/types';
 
-export const fetchPosts = () => (dispatch:any) => {
-  fetch('https://jsonplaceholder.typicode.com/posts')
+export const fetchLeagues = () => {
+  return (dispatch: any, getState: any) => {
+    return fetch('https://cors-anywhere.herokuapp.com/https://api.eslgaming.com/play/v1/leagues/177161')
     .then(res => res.json())
-    .then(data => dispatch({
+    .then(ld => dispatch({
       type: FETCH_LEAGUES,
-      payload: data
-    }))
+      payload: ld
+    }))}
 }

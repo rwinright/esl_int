@@ -6,6 +6,7 @@ const initialState = {
 }
 
 export default function(state = initialState, action: any) {
+  console.log(action.type)
   switch(action.type){
     case FETCH_LEAGUES:
       return {
@@ -13,6 +14,7 @@ export default function(state = initialState, action: any) {
         items: action.payload
       }
     default:
+      console.log('Nothing happened')
       return state;
   }
 }

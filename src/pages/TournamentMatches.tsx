@@ -1,6 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import { connect } from 'react-redux';
+import { fetchLeagues } from '../actions/leagueActions';
 
-const TournamentMatches: React.FC = (data) => {
+const TournamentMatches: React.FC = (props: any) => {
+
+  useEffect(() => {
+    console.log(props)
+    props.fetchLeagueData();
+  });
 
   return (
     <div className="Tournament_Matches">
@@ -46,4 +53,14 @@ const TournamentMatches: React.FC = (data) => {
   );
 }
 
-export default TournamentMatches;
+const mapStateToProps = (state:any) => ({
+  leagues: state.leagueData.items
+})
+
+const mapDispatchToProps = (dispatch: any) => {
+  return {
+    fetchLeagueData: () => dispatch(fetchLeagues)
+  }
+}
+
+export default connect(mapStateToProps,  mapDispatchToProps )(TournamentMatches)
